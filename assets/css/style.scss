@@ -11,4 +11,7 @@
 @import "common.scss";
 
 // =====Подключение стилей главной страницы=====
-@import "index.scss";
+@import "pages.scss";
+
+// =====Подключение стилей личных кабинетов=====
+@import "office.scss";

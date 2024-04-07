@@ -1,17 +1,17 @@
 <!-- header -->
 <header class="header _content">
     <div class="header__content">
-        <a class="header__logo" href="index.html" data-link="linkPage-Welcome">
+        <a class="header__logo" href="?page=welcome">
             <img src="assets/media/logo/logo-mini.svg" alt="logo-mini">
             <p>Xameleyon</p>
         </a>
         <nav class="header__nav">
             <div class="header__nav-close"><span></span></div>
-            <a href="page-about.html" data-link="linkPage-About">О нас</a>
-            <a href="index.html#curs" data-link="linkPage-About">Курсы</a>
-            <a href="index.html#teacher" data-link="linkPage-About">Наставники</a>
-            <a href="#contacts" data-link="linkPage-About">Контакты</a>
-            <button class="_btn">Войти</button>
+            <a href="?page=about">О нас</a>
+            <a href="?page=welcome#curs">Курсы</a>
+            <a href="?page=welcome#teacher">Наставники</a>
+            <a href="#contact">Контакты</a>
+            <a class="_login _btn" href="?page=login">Войти</a>
         </nav>
 
         <div class="header__btns">
@@ -21,7 +21,7 @@
                 <p class="header__lang-p" data-lange="lang-uz" data-ya-lang="uz">uz</p>
             </div>
             <div class="header__nav-open"><span></span></div>
-            <button class="_btn">Войти</button>
+            <a class="_btn" href="?page=login">Войти</a>
         </div>
     </div>
 </header>

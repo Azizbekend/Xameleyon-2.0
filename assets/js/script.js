@@ -30,3 +30,30 @@ openNav.addEventListener("click", function () {
 closeNav.addEventListener("click", function () {
     navigation.classList.remove('_active');
 })
+
+
+//* Переключатель для кнопок входа 
+const signinBtn = document.querySelectorAll('.login__btn');
+const signinInp = document.getElementById("emailLogin");
+
+console.log(signinInp);
+
+signinBtn.forEach(element => {
+    element.addEventListener("click", function () {
+        signinBtn.forEach(elem => {
+            elem.classList.remove("_active");
+        })
+        element.classList.add("_active");
+
+        if (element.classList.contains("_tel")) {
+            signinInp.name = "tel";
+            signinInp.type = "tel";
+            signinInp.placeholder = "Введите номер телефона";
+        }
+        else {
+            signinInp.name = "email";
+            signinInp.type = "email";
+            signinInp.placeholder = "Введите почту";
+        }
+    })
+})

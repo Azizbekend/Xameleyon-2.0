@@ -2,7 +2,7 @@
 <footer class="footer _content">
     <div class="footer__content">
         <div class="footer__left">
-            <a class="footer__logo" href="index.html" data-link="linkPage-Welcome">
+        <a class="footer__logo" href="?page=welcome">
                 <img src="assets/media/logo/logo-mini.svg" alt="logo-mini">
                 <p>Xameleyon</p>
             </a>
@@ -10,10 +10,10 @@
         </div>
         <div class="footer__navigate">
             <p class="footer__name">МЕНЮ</p>
-            <a href="page-about.html" data-link="linkPage-About">О нас</a>
-            <a href="index.html#curs" data-link="linkPage-About">Курсы</a>
-            <a href="index.html#teacher" data-link="linkPage-About">Наставники</a>
-            <a href="#contacts" data-link="linkPage-About">Контакты</a>
+            <a href="?page=about">О нас</a>
+            <a href="?page=welcome#curs">Курсы</a>
+            <a href="index.html#teacher">Наставники</a>
+            <a href="#contact">Контакты</a>
         </div>
         <div class="footer__navigate">
             <p class="footer__name">КОНТАКТЫ</p>

@@ -1,5 +1,5 @@
 <!-- contact -->
-<section class="contact _content _py">
+<section class="contact _content _py" id="contact">
     <div class="contact__quetions cq _fonBack-navy__blue">
         <h3 class="_700">Есть вопросы?</h3>
         <p class="cq__text _text-lvl_1">Заполните форму, и мы обязательно Вам ответим</p>
