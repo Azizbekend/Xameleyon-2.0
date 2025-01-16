@@ -1,0 +1,975 @@
+// ===ЗАГАЛОВКИ===
+h1 {
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 48px;
+    margin-bottom: 100px;
+
+    & span {
+        color: #00b533;
+    }
+
+    &._700 {
+        font-weight: 700;
+    }
+}
+
+h3 {
+    font-size: 32px;
+
+    &._700 {
+        font-weight: 700;
+    }
+
+    & span {
+        color: #00b533;
+    }
+}
+
+h4 {
+    font-size: 32px;
+    font-family: "OpenSans";
+
+    &._700 {
+        font-weight: 700;
+    }
+}
+
+h5 {
+    font-size: 24px;
+}
+
+h6 {
+    font-size: 20px;
+    &._opens {
+        font-family: "OpenSans";
+        font-weight: 700;
+    }
+}
+
+// ===ОБЩИЕ КЛАССЫ ТЕКСТА===
+._text-lvl_1 {
+    font-size: 24px;
+    line-height: 135%;
+
+    &._700 {
+        font-weight: 700;
+    }
+}
+
+._text-lvl_2 {
+    font-size: 20px;
+    line-height: 135%;
+
+    &._700 {
+        font-weight: 700;
+    }
+}
+
+._text-lvl_3 {
+    font-size: 18px;
+    line-height: 135%;
+}
+
+@media (max-width: em($mPoint-3, 16)) {
+    h1 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    ._text-lvl_1 {
+        font-size: 20px;
+    }
+
+    ._text-lvl_2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: em($mPoint-5, 16)) {
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 32px;
+        margin-bottom: 70px;
+    }
+
+    ._text-lvl_1 {
+        font-size: 18px;
+    }
+
+    ._text-lvl_2 {
+        font-size: 16px;
+    }
+
+    ._text-lvl_3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: em($mPoint-6, 16)) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    h5 {
+        font-size: 20px;
+    }
+
+    h6 {
+        font-size: 20px;
+    }
+
+    ._text-lvl_1 {
+        font-size: 16px;
+    }
+
+    ._text-lvl_3 {
+        font-size: 14px;
+    }
+}
+
+// ===ОБЩИЕ КЛАССЫ===
+// Ограничитель контента
+._content {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (max-width: em(1480, 16)) {
+        padding: 0 40px;
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        padding: 0 30px;
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        padding: 0 20px;
+    }
+}
+
+// Стили кнопок
+._btn {
+    font-size: 20px !important;
+    color: white;
+    background-color: #00b533;
+    cursor: pointer;
+
+    @media (max-width: em($mPoint-5, 16)) {
+        font-size: 16px !important;
+    }
+
+    @media (min-width: em($mPoint-4, 16)) {
+        &:hover {
+            background-color: #00b5339f;
+        }
+    }
+
+    &._border {
+        border-radius: 10px;
+    }
+
+    &._notBack {
+        background: none;
+        color: #00b533;
+        border: 1px solid #00b533;
+
+        @media (min-width: em($mPoint-4, 16)) {
+            &:hover {
+                background-color: #00b533;
+                color: white;
+            }
+        }
+    }
+
+    &._redBack {
+        background-color: #bb2814;
+        @media (min-width: em($mPoint-4, 16)) {
+            &:hover {
+                background-color: #bb271497;
+            }
+        }
+    }
+
+    &._unbounded {
+        font-family: "Unbounded";
+        font-weight: 700;
+    }
+}
+
+// Стили фона
+._fonBack-navy__blue {
+    background-color: #11162e;
+    border-radius: 20px;
+
+    &._hover {
+        @media (min-width: em($mPoint-4, 16)) {
+            transition: 0.5s;
+            &:hover {
+                background-color: #3b3f51;
+            }
+        }
+    }
+}
+
+// Класс отступа
+._py {
+    margin-bottom: 200px;
+
+    @media (max-width: em($mPoint-3, 16)) {
+        margin-bottom: 130px;
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        margin-bottom: 100px;
+    }
+}
+
+// Полоска между блоками
+._lineSection {
+    height: 2px;
+    background: radial-gradient(rgba(255, 255, 255, 0.244), #ffffff3e, #ffffff1a, #ffffff00);
+}
+
+// ===ОБЩИЕ БЛОКИ===
+.wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+// header
+.header {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid white;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        & img {
+            width: 45px;
+        }
+
+        & p {
+            font-family: "Recharge";
+            font-size: 32px;
+        }
+    }
+
+    &__nav {
+        display: flex;
+        gap: 30px;
+        font-size: 20px;
+
+        @media (min-width: 768px) {
+            & a:hover {
+                color: #00b533;
+            }
+        }
+
+        &-close {
+            display: none;
+        }
+
+        & a._login {
+            display: none;
+        }
+    }
+
+    &__btns {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        & a {
+            padding: em(12, 20) em(54, 20);
+        }
+    }
+
+    &__langContainer {
+        display: none;
+    }
+
+    &__lang {
+        display: flex;
+        gap: 10px;
+        font-size: 20px;
+        font-family: "Unbounded";
+        padding: 6px;
+        background-color: #00b533;
+        color: white;
+        border-radius: 30px;
+
+        &-p {
+            padding: em(8, 20) em(6, 20) !important;
+            cursor: pointer;
+            border-radius: 100%;
+            display: block;
+
+            &._active {
+                background-color: white;
+                color: black;
+            }
+            @media (max-width: em($mPoint-4, 16)) {
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.586);
+                }
+            }
+        }
+    }
+
+    @media (max-width: em(1120, 16)) {
+        &__logo {
+            & img {
+                width: 30px;
+            }
+            & p {
+                font-size: 24px;
+            }
+        }
+
+        &__btns {
+            & a {
+                font-size: 16px;
+            }
+        }
+    }
+
+    @media (max-width: em(1021, 16)) {
+        &__nav {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #000616;
+            padding: em(50, 48);
+            flex-direction: column;
+            font-size: 48px;
+            align-items: end;
+            z-index: 1000;
+
+            transform: translateX(100%);
+            z-index: 10;
+            &._active {
+                transform: translateX(0);
+            }
+
+            & a._login {
+                display: block;
+                padding: em(5, 12) em(10, 12);
+                font-size: inherit !important;
+            }
+
+            &-close {
+                display: block;
+                & span {
+                    width: 40px;
+                    height: 5px;
+                    background-color: white;
+                    transform: rotate(45deg);
+                    display: block;
+                    position: relative;
+                    cursor: pointer;
+                    margin-bottom: 40px;
+
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        width: 40px;
+                        height: 5px;
+                        background-color: white;
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+
+            &-open span {
+                width: 50px;
+                height: 5px;
+                cursor: pointer;
+                background-color: #00b533;
+                display: block;
+
+                &::before,
+                &::after {
+                    content: "";
+                    width: 50px;
+                    height: 5px;
+                    display: block;
+                    cursor: pointer;
+                    background-color: #00b533;
+                    display: block;
+                }
+                &::before {
+                    transform: translateY(10px);
+                }
+
+                &::after {
+                    transform: translateY(-15px);
+                }
+            }
+        }
+
+        &__btns {
+            & a {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__nav {
+            font-size: 32px;
+        }
+    }
+
+    @media (max-width: em(468, 16)) {
+        &__content {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        &__logo {
+            & img {
+                width: 50px;
+            }
+            & p {
+                display: none;
+            }
+        }
+
+        &__nav {
+            font-size: 32px;
+            &-close span {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+// banner
+.banner {
+    padding-top: 100px;
+    position: relative;
+    text-align: center;
+    z-index: 0;
+
+    &__word {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+
+        & p {
+            color: #00b533;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        & h1 {
+            margin-bottom: 50px;
+            line-height: 125%;
+        }
+    }
+
+    &__btn {
+        padding: 18px;
+        max-width: 344px;
+    }
+    &__errow {
+        display: flex;
+        flex-direction: column;
+        @include razmer("font-size", 32, 12);
+
+        & span {
+            animation: banerErrow 2s infinite;
+        }
+    }
+
+    &__ellips {
+        display: flex;
+        justify-content: space-between;
+        width: 140%;
+        position: absolute;
+        top: 5%;
+        left: -20%;
+    }
+
+    &__ellip {
+        @include razmer("width", 700, 200);
+        @include razmer("height", 700, 200);
+        background: radial-gradient(#00b5336f, #00b53348, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+        border-radius: 100%;
+
+        &:first-child {
+            animation: linear Ellips 3s infinite alternate;
+        }
+
+        &:last-child {
+            animation: linear Ellips 2.5s infinite alternate;
+        }
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        padding-top: 50px;
+
+        & h1 {
+            margin-bottom: 30px;
+        }
+
+        &__word {
+            width: 90%;
+        }
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &__ellips {
+            width: 160%;
+            left: -30%;
+        }
+    }
+}
+
+@keyframes Ellips {
+    from {
+        transform: scale(1) translateY(-10%);
+    }
+    to {
+        transform: scale(0.7) translateY(5%);
+    }
+}
+
+@keyframes banerErrow {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(90px);
+    }
+}
+
+// Блок с информацией
+.info-block {
+    padding: 50px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+
+    &__word {
+        max-width: 70%;
+        &._cours {
+            max-width: 100%;
+        }
+        & h3 {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__logo {
+        width: 180px;
+    }
+
+    &__pretzel {
+        position: absolute;
+        bottom: -40%;
+        right: -8%;
+        max-width: 244px;
+        min-width: 120px;
+        @include razmer("width", 244, 100);
+        max-width: 244px;
+        animation: 3.5s linear 3.5s infinite rotatePretzel;
+
+        @media (max-width: em(1480, 16)) {
+            right: 0%;
+        }
+    }
+
+    @media (max-width: em($mPoint-3, 16)) {
+        padding: 30px;
+
+        &__logo {
+            width: 130px;
+        }
+
+        &__pretzel {
+            bottom: -45%;
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &._cours {
+            flex-direction: row;
+        }
+        flex-direction: column-reverse;
+        padding: 15px 15px 50px 15px;
+
+        &__word {
+            max-width: 100%;
+
+            & h3 {
+                margin-bottom: 30px;
+            }
+        }
+
+        &__pretzel {
+            bottom: 0;
+            right: 0;
+            top: -13%;
+
+            &._adap {
+                right: 0%;
+                top: 80%;
+            }
+        }
+    }
+}
+
+@keyframes rotatePretzel {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// Общие стили карточек курса
+._cours-card {
+    max-width: 419px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+
+    & img {
+        width: 100%;
+    }
+    & h5 {
+        margin: 30px 10px;
+    }
+
+    & button {
+        margin-top: 20px;
+        display: block;
+        color: #00b533;
+        font-size: 20px;
+
+        @media (min-width: em($mPoint-4, 16)) {
+            cursor: pointer;
+            &:hover {
+                & span {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+    @media (max-width: em($mPoint-3, 16)) {
+        max-width: none;
+    }
+}
+
+// Карточка с учителями
+.teacher-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+
+    & h4 {
+        margin: 40px 0 10px 0;
+    }
+
+    & p {
+        color: #00b533;
+        margin-bottom: 30px;
+    }
+
+    &__img {
+        border-radius: 100%;
+        width: 220px;
+        height: 220px;
+        overflow: hidden;
+        position: relative;
+
+        & img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+    }
+
+    &__work {
+        width: 80%;
+        max-width: 220px;
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        padding: 30px;
+
+        &__img {
+            width: 200px;
+        }
+
+        &__work {
+            width: 150px;
+        }
+    }
+}
+
+// contact
+.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+
+    &__quetions {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        & input {
+            font-size: 18px;
+            padding: 1em;
+            border: 1px solid #a8a8a8;
+            border-radius: 5px;
+
+            &:focus {
+                border: 1.5px solid rgb(255, 255, 255);
+            }
+
+            &:last-child {
+                border: none;
+            }
+        }
+    }
+
+    &__map {
+        & iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 20px;
+        }
+    }
+
+    @media (max-width: em(500, 16)) {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        &__form {
+            & input {
+                font-size: 16px;
+            }
+        }
+    }
+}
+.cq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 30px;
+
+    &__disclaimer {
+        color: #a8a8a8;
+        line-height: 130%;
+
+        & span {
+            border-bottom: 1px solid #00b533;
+            color: #00b533 !important;
+            cursor: pointer;
+        }
+    }
+}
+.ci {
+    padding: 40px 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    &__word {
+        & > * {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__text {
+        line-height: 150%;
+        & span {
+            font-weight: 700;
+        }
+    }
+
+    &__media {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        & img {
+            width: 50px;
+        }
+    }
+
+    @media (max-width: em(550, 16)) {
+        flex-direction: column;
+
+        &__media {
+            flex-direction: row;
+        }
+    }
+}
+
+// footer
+.footer {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 50px 0;
+        border-top: 1px solid white;
+    }
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        & img {
+            width: 45px;
+        }
+
+        & p {
+            font-family: "Recharge";
+            font-size: 32px;
+        }
+    }
+    &__copirate {
+        color: #a8a8a8;
+        margin-top: 1.125em;
+        font-size: 18px;
+    }
+    &__navigate {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        font-size: 20px;
+
+        @media (min-width: 768px) {
+            & a:hover {
+                color: #00b533;
+            }
+        }
+    }
+    &__name {
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    &__media {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    @media (max-width: em(1080, 16)) {
+        &._padding {
+            padding-bottom: 110px;
+        }
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        &__left {
+            width: 100%;
+            text-align: center;
+        }
+        &__navigate {
+            width: fit-content;
+        }
+        &__logo {
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__logo {
+            & img {
+                width: 30px;
+            }
+            & p {
+                font-size: 24px;
+            }
+        }
+        &__copirate {
+            font-size: 16px;
+        }
+        &__navigate {
+            font-size: 18px;
+        }
+
+        &__name {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &__content {
+            justify-content: center;
+            text-align: center;
+        }
+
+        &._padding {
+            padding-bottom: 70px;
+        }
+
+        &__media {
+            justify-content: center;
+        }
+    }
+}

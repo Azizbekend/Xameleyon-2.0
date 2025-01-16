@@ -1,0 +1,1053 @@
+// ===Page-welcome===
+// Баннер
+.welcome-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 50px;
+    padding-top: 30px;
+
+    &__word {
+        text-transform: uppercase;
+        width: 50%;
+
+        & p {
+            color: #00b533;
+            margin-bottom: 5px;
+        }
+
+        & h2 {
+            margin-bottom: 50px;
+            line-height: 125%;
+        }
+
+        & a {
+            padding: 18px 68px;
+            display: inline-block;
+        }
+    }
+
+    &__foto {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 40%;
+
+        & img {
+            max-width: 392px;
+            min-width: 190px;
+            width: 80%;
+            z-index: 10;
+        }
+    }
+
+    &__obsalute {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    &__ellipse {
+        background-color: #00b5331e;
+        border-radius: 100%;
+        display: block;
+
+        &._first {
+            @include razmer("min-width", 560, 296);
+            @include razmer("height", 560, 296);
+            max-width: 610px;
+            max-height: 610px;
+            animation: linear 1.5s infinite alternate ellipsePuls;
+        }
+
+        &._second {
+            @include razmer("width", 433, 200);
+            @include razmer("height", 433, 200);
+            max-width: 433px;
+            max-height: 433px;
+            position: absolute;
+            animation: linear 1.7s infinite alternate ellipsePuls;
+        }
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        flex-direction: column-reverse;
+        justify-content: center;
+
+        &__word {
+            width: 100%;
+            text-align: center;
+        }
+
+        &__foto {
+            width: 70%;
+            min-width: 190px;
+        }
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &__word a {
+            width: 100%;
+        }
+    }
+}
+
+@keyframes ellipsePuls {
+    from {
+        transform: scale(1.1);
+    }
+    to {
+        transform: scale(0.8);
+    }
+}
+
+// Блок о нас
+.about {
+    &__btn {
+        padding: 18px 63px;
+        display: inline-block;
+        margin-top: 30px;
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &__btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+// Блок курсы
+.cours {
+    &__title {
+        text-align: center;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+        row-gap: 50px;
+    }
+
+    &__card {
+        min-width: 280px;
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        &__cards {
+            display: flex;
+            overflow: scroll;
+            padding-bottom: 20px;
+
+            &::-webkit-scrollbar {
+                width: 0px;
+                height: 5px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: #00381f;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 8px;
+                background-color: #00b533;
+            }
+        }
+    }
+}
+
+// Блок с процессом
+.process {
+    display: flex;
+    gap: 50px;
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 850px;
+    }
+
+    &__card {
+        padding: 30px;
+        coursor: pointer;
+        &._third {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+
+    &__name {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        color: #00b533;
+    }
+
+    @media (max-width: em($mPoint-3, 16)) {
+        flex-direction: column;
+        gap: 0;
+
+        & h2 {
+            width: min-content;
+        }
+
+        &__cards {
+            max-width: none;
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__cards {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__name {
+            & img {
+                width: 60px;
+            }
+        }
+    }
+}
+
+// Блок с учителями
+.teacher {
+    padding-left: 100px;
+    padding-right: 100px;
+
+    &._adap {
+        padding: 0;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__cards {
+        display: flex;
+        gap: 50px;
+
+        width: 100%;
+        overflow: scroll;
+        padding-bottom: 20px;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #00381f;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 8px;
+            background-color: #00b533;
+        }
+    }
+
+    @media (max-width: em(1480, 16)) {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+    @media (max-width: em($mPoint-5, 16)) {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &__cards {
+            gap: 30px;
+        }
+    }
+}
+
+// ===Page-about===
+// numbers
+.numbers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+
+    &__title {
+        width: min-content;
+    }
+
+    &__cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 610px;
+    }
+
+    &__card {
+        padding: 20px;
+        max-width: 280px;
+    }
+
+    &__num {
+        font-size: 64px;
+        color: #00b533;
+        font-family: "Unbounded";
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: em($mPoint-3, 16)) {
+        flex-direction: column;
+        gap: 0;
+
+        &__title {
+            width: fit-content;
+            text-align: center;
+        }
+
+        &__cards {
+            gap: 15px;
+            max-width: none;
+        }
+
+        &__card {
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        &__num {
+            font-size: 48px;
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__card {
+            width: 45%;
+
+            &:last-child {
+                width: 80%;
+            }
+        }
+        &__num {
+            font-size: 32px;
+        }
+        &__text {
+            font-size: 16px;
+        }
+    }
+}
+
+// documents
+.documents {
+    &__title {
+        text-align: center;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    &__words {
+        & p {
+            max-width: 530px;
+            margin-bottom: 50px;
+        }
+
+        & a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #00b533;
+            margin-bottom: 30px;
+            width: fit-content;
+
+            &:last-child {
+                margin-bottom: none;
+            }
+        }
+    }
+
+    &__imgs {
+        max-width: 530px;
+        width: 100%;
+        display: flex;
+        gap: 50px;
+    }
+
+    &__img {
+        width: 100%;
+        min-width: 50px;
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        &__title {
+            font-size: 24px;
+        }
+
+        &__bottom {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        &__words {
+            & p {
+                margin-bottom: 30px;
+                max-width: none;
+            }
+
+            & img {
+                width: 30px;
+            }
+        }
+
+        &__imgs {
+            max-width: none;
+        }
+    }
+}
+
+// ===page-cours===
+// wages
+.wages {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    align-items: start;
+    gap: 50px;
+
+    &__hh {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        text-align: right;
+        max-width: 370px;
+        margin: 0 0 0 auto;
+
+        & img {
+            height: 80px;
+        }
+
+        & p {
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.453);
+            span {
+                display: none;
+            }
+        }
+    }
+
+    &__cards {
+        display: flex;
+        align-items: end;
+        gap: 25px;
+
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    &__card {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+
+        &.junior {
+            height: 200px;
+        }
+        &.middle {
+            height: 250px;
+        }
+        &.senior {
+            height: 300px;
+        }
+    }
+
+    &__number {
+        font-size: 36px;
+        font-family: "Unbounded";
+        font-weight: 700;
+    }
+
+    &__name {
+        padding: 10px;
+        color: #00b533;
+        font-size: 32px;
+        font-family: "Unbounded";
+        font-weight: 700;
+        background: #000616;
+        border-radius: 5px;
+    }
+
+    @media (max-width: em($mPoint-3, 16)) {
+        grid-template-columns: 1fr;
+        gap: 0;
+
+        &__hh {
+            flex-direction: row-reverse;
+            max-width: none;
+            text-align: left;
+            margin: 50px auto 0 0;
+
+            grid-column-start: 1;
+            grid-column-end: 2;
+
+            grid-row-start: 3;
+            grid-row-end: 4;
+
+            & p span {
+                display: inline;
+            }
+        }
+
+        &__cards {
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__hh {
+            gap: 10px;
+
+            & img {
+                height: 50px;
+            }
+
+            & p {
+                font-size: 16px;
+            }
+        }
+
+        &__cards {
+            flex-direction: column;
+            align-items: start;
+        }
+
+        &__card {
+            flex-direction: row-reverse;
+            &.junior {
+                width: 50%;
+                min-width: 265px;
+                height: min-content;
+            }
+            &.middle {
+                width: 70%;
+                height: min-content;
+            }
+            &.senior {
+                width: 90%;
+                height: min-content;
+            }
+        }
+
+        &__number {
+            font-size: 24px;
+        }
+        &__name {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &__card {
+            &.junior {
+                min-width: 230px;
+                width: 60%;
+            }
+            &.middle {
+                min-width: 200px;
+                width: 80%;
+            }
+            &.senior {
+                min-width: 200px;
+                width: 90%;
+            }
+        }
+        &__number {
+            font-size: 20px;
+        }
+        &__name {
+            font-size: 20px;
+        }
+    }
+}
+
+// technologies
+.technologies {
+    &__title {
+        text-align: center;
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__card {
+        width: 100%;
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    &__name {
+        margin-bottom: 35px;
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__cards {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        &__card {
+            max-width: none;
+            padding: 20px;
+        }
+    }
+}
+
+// rate
+.rate {
+    &__title {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        justify-items: center;
+        gap: 20px;
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__cards {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+
+        width: 100%;
+        max-width: 600px;
+        padding: 50px;
+        border-radius: 20px;
+        text-align: center;
+
+        &._green {
+            border: 1px solid #00b533;
+        }
+
+        & img {
+            width: 120px;
+        }
+
+        & p {
+            color: #bbbdc3;
+        }
+    }
+
+    &__btn {
+        padding: 15px 60px;
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        &__card {
+            gap: 40px;
+            padding: 20px;
+            & img {
+                width: 80px;
+            }
+        }
+
+        &__btn {
+            padding: 15px 30px;
+        }
+    }
+
+    &__card {
+        max-width: 400px;
+    }
+}
+
+// ===Login===
+.login {
+    margin: 150px auto;
+    & h2 {
+        text-align: center;
+    }
+
+    & p {
+        text-align: center;
+    }
+
+    & form {
+        max-width: 600px;
+        padding: 50px;
+        margin: 50px auto 40px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    & input {
+        width: 100%;
+        font-size: 20px;
+        padding: 25px 20px;
+        border-radius: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.226);
+
+        &:focus {
+            border: 1px solid white;
+        }
+    }
+
+    &__btns {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 20px;
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 25px 20px;
+        border-radius: 5px;
+        text-align: center;
+
+        &._tel {
+            border: 1px solid #00b533;
+            color: #00b533;
+            background: transparent;
+            @media (min-width: em($mPoint-4, 16)) {
+                &:hover {
+                    background-color: #00b53338;
+                }
+            }
+        }
+        &._email {
+            border: 1px solid #00b533;
+            color: #00b533;
+            background: transparent;
+            @media (min-width: em($mPoint-4, 16)) {
+                &:hover {
+                    background-color: #00b53338;
+                }
+            }
+        }
+        &._active {
+            color: white;
+            background-color: #00b533;
+
+            @media (min-width: em($mPoint-4, 16)) {
+                &:hover {
+                    background-color: #00b533;
+                }
+            }
+        }
+    }
+
+    &__link {
+        & a {
+            color: #00b533;
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        margin: 80px auto 130px auto;
+
+        & form {
+            margin: 30px auto 20px auto;
+        }
+
+        & input {
+            font-size: 16px;
+        }
+
+        &__btn {
+            padding: 15px 10px;
+        }
+    }
+
+    @media (max-width: em(600, 16)) {
+        & form {
+            padding: 30px 20px;
+        }
+    }
+}
+
+#theory-link {
+    display: none;
+}
+
+// lesson
+.lesson {
+    display: flex;
+    margin-top: 100px;
+    $lesson-gap: 70px;
+    gap: $lesson-gap;
+
+    &-panel {
+        max-width: 398px;
+        width: 100%;
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        &__open {
+            & img {
+                rotate: 180deg;
+            }
+        }
+        &__open,
+        &__close {
+            display: none;
+        }
+    }
+
+    &-card {
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        cursor: pointer;
+
+        & img {
+            width: 55px;
+        }
+
+        & p {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: prc(27, 20);
+        }
+
+        &__btnRemove {
+            // display: none;
+        }
+
+        &.__telegram {
+            background-color: #00b533;
+            @media (min-width: em($mPoint-4, 16)) {
+                &:hover {
+                    background-color: #00b53398;
+                }
+            }
+        }
+    }
+
+    &-windows {
+        max-width: 927px;
+        width: 100%;
+        padding: 40px 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 50px;
+
+        &__video {
+            width: 100%;
+
+            & img,
+            & video {
+                width: 100%;
+            }
+        }
+
+        &__btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        &__btns > &__btn {
+            width: 100%;
+        }
+
+        &__btn {
+            text-align: center;
+        }
+
+        &__name {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+
+            & input {
+                width: 100%;
+                text-align: center;
+                padding: 15px 20px;
+                border: 1px solid rgba(255, 255, 255, 0.226);
+
+                &:focus {
+                    border: 1px solid white;
+                }
+            }
+        }
+
+        &__description {
+            font-size: 20px;
+            line-height: prc(27, 20);
+
+            & pre {
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                word-spacing: -5px;
+            }
+
+            & textarea {
+                width: 100%;
+                padding: 15px 20px;
+                border: 1px solid rgba(255, 255, 255, 0.226);
+                height: 200px;
+
+                &:focus {
+                    border: 1px solid white;
+                }
+            }
+        }
+
+        &__btn {
+            padding: 25px;
+        }
+    }
+
+    &-error {
+        margin-top: -30px;
+    }
+
+    @media (max-width: em($mPoint-3, 16)) {
+        flex-direction: column;
+        margin-top: 50px;
+        &-panel {
+            top: 0;
+            left: 0;
+            padding-bottom: 100px;
+            position: fixed;
+            max-width: none;
+            width: 100%;
+            height: 100%;
+            background-color: #0006167c;
+            overflow: scroll;
+            display: none;
+            z-index: 10;
+
+            &__content {
+                max-width: 430px;
+                width: 100%;
+                margin-top: 20%;
+                margin-left: 50px;
+                background-color: #000616;
+                padding: 30px;
+                transform: translateX(-150%);
+            }
+
+            &__open,
+            &__close {
+                display: block;
+                width: min-content;
+            }
+        }
+
+        &-windows {
+            max-width: none;
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &-panel {
+            padding-bottom: 50px;
+            &__content {
+                gap: 20px;
+                margin-top: 20%;
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+
+        &-card {
+            padding: 20px;
+            & img {
+                width: 35px;
+            }
+
+            & p {
+                font-size: 16px;
+            }
+        }
+
+        &-windows {
+            padding: 40px 20px;
+            gap: 30px;
+
+            &__name {
+                font-size: 22px;
+            }
+            &__description {
+                font-size: 18px;
+            }
+            &__btn {
+                padding: 15px;
+            }
+        }
+
+        &-error {
+            margin-top: -10px;
+        }
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &-panel {
+            max-width: none;
+        }
+
+        &-windows {
+            &__name {
+                font-size: 20px;
+            }
+            &__description {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+// ===infoCourse===
+.banner {
+    &__word {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+//error
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+
+    height: 60%;
+    text-align: center;
+    width: fit-content;
+}

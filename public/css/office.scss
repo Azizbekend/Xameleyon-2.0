@@ -1,0 +1,1130 @@
+// ===OFFICE===
+.office {
+    display: flex;
+    gap: 20px;
+
+    &__tab-img {
+        background-color: #00b533;
+        height: 48px;
+        width: 48px;
+        border-radius: 100%;
+        padding: 8px;
+
+        flex: 0 1 auto;
+
+        & img {
+            width: 100%;
+        }
+    }
+
+    &__user {
+        text-align: center;
+
+        & img {
+            max-width: 150px;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        & p {
+            color: #00b533;
+            margin-top: 30px;
+        }
+
+        @media (max-width: em(1080, 16)) {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+
+            & img {
+                max-width: 80px;
+                border-radius: 100%;
+            }
+            & p {
+                margin-top: 0px;
+                width: fit-content;
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: em($mPoint-6, 16)) {
+            & p {
+                display: none;
+            }
+        }
+    }
+
+    &__panel {
+        min-width: 420px;
+        padding: 60px 50px;
+        position: relative;
+        z-index: 100;
+
+        &-content {
+            margin: 0 0 0 auto;
+            position: sticky;
+            top: 60px;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 0px;
+                height: 0px;
+            }
+        }
+        &-scroll {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            height: 100vh;
+            max-width: 400px;
+            margin-bottom: -70px;
+        }
+
+        &-balance {
+            width: 100%;
+            background-color: #34394d;
+            padding: 10px 20px;
+            border-radius: 5px;
+
+            font-size: 20px;
+            font-family: "Unbounded";
+            font-weight: 400;
+
+            &__top {
+                display: flex;
+                justify-content: space-between;
+                text-align: right;
+                gap: 18px;
+            }
+
+            &__btn {
+                width: 100%;
+                padding: 15px;
+                margin-top: 20px;
+            }
+        }
+
+        &-tab {
+            background-color: #1d2239;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            font-family: "Unbounded";
+            font-weight: 700;
+            font-size: 20px;
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 5px;
+
+            @media (min-width: em($mPoint-4, 16)) {
+                &:hover {
+                    background-color: #34394d;
+                }
+            }
+            &._active {
+                background-color: #34394d;
+            }
+        }
+
+        @media (max-width: em(1080, 16)) {
+            min-width: 0;
+            width: 100%;
+            padding: 0;
+            border-radius: 0;
+
+            position: fixed;
+            bottom: 0;
+            left: 0;
+
+            & h3 {
+                display: none;
+            }
+
+            &-content {
+                position: static;
+            }
+
+            &-scroll {
+                flex-direction: row;
+                max-width: none;
+                justify-content: space-between;
+                align-items: stretch;
+                gap: 1px;
+                width: 100%;
+                height: min-content;
+                margin-bottom: 0px;
+            }
+
+            &-tab {
+                width: 100%;
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-bottom: 20px;
+                & span {
+                    font-size: 16px;
+                }
+
+                &._none {
+                    display: none;
+                }
+            }
+
+            &-balance {
+                display: none;
+            }
+
+            &-user {
+                display: none;
+            }
+        }
+
+        @media (max-width: em($mPoint-6, 16)) {
+            &-tab span {
+                display: none;
+            }
+        }
+    }
+
+    &__header {
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        padding: 10px 40px;
+        border-radius: 0px;
+        height: min-content;
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        z-index: 100;
+
+        &-balace {
+            font-size: 24px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        &-btns {
+            display: flex;
+            gap: 20px;
+        }
+
+        @media (max-width: em(1080, 16)) {
+            display: flex;
+
+            &-tab {
+                width: min-content;
+                padding: 0;
+            }
+        }
+
+        @media (max-width: em($mPoint-4, 16)) {
+            padding: 10px 30px;
+        }
+
+        @media (max-width: em($mPoint-5, 16)) {
+            padding: 10px 20px;
+
+            &-balace p {
+                display: none;
+            }
+        }
+    }
+
+    &__windows {
+        width: 100%;
+        max-width: 1100px;
+        margin-top: 60px;
+        padding-left: 40px;
+        overflow: hidden;
+
+        & h3 {
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: em(1080, 16)) {
+            padding-top: 100px;
+        }
+
+        @media (max-width: em(1660, 16)) {
+            padding-right: 40px;
+        }
+
+        @media (max-width: em($mPoint-4, 16)) {
+            padding: 80px 30px 0 30px;
+        }
+        @media (max-width: em($mPoint-5, 16)) {
+            padding: 60px 20px 0 20px;
+        }
+    }
+}
+
+// ===WINDOWS===
+// WINDOWS общие стили
+._windows__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+// windows admin-cours
+.admin-cours {
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    &__card {
+        max-width: 400px !important;
+    }
+
+    &__btns {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    &__form {
+        width: 100%;
+        display: block;
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 15px 20px;
+        display: block;
+        cursor: pointer;
+        text-align: center;
+
+        &._btn {
+            margin: 0;
+            color: white;
+        }
+
+        &._notBack {
+            color: #00b533;
+        }
+    }
+
+    @media (max-width: em($mPoint-2, 16)) {
+        &__card {
+            max-width: none;
+        }
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        &__btns {
+            gap: 10px;
+        }
+
+        &__btn {
+            padding: 15px;
+        }
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &__cards {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        &__btns {
+            flex-direction: column;
+        }
+
+        &__btn {
+            padding: 15px;
+        }
+    }
+}
+
+// windows userInfo
+.userInfo {
+    &__name {
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    &__fotos {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__fotoBtn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    &__inp {
+        width: 100%;
+        padding: 30px;
+        text-align: left;
+        display: block;
+        font-size: 24px;
+
+        &._date ::-webkit-calendar-picker-indicator {
+            filter: invert(100%);
+        }
+    }
+
+    &__btns {
+        display: flex;
+        gap: 20px;
+
+        &._infoUser {
+            margin-top: 50px;
+        }
+    }
+    &__btn {
+        padding: 11px;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__title {
+        margin-top: 80px;
+    }
+
+    &__new {
+        width: 200px;
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        &__name {
+            font-size: 20px;
+        }
+        &__inp {
+            font-size: 18px;
+            padding: 20px;
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__fotos {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+// windows statistics
+.statistics {
+    &__tabs {
+        display: flex;
+        gap: 45px;
+        margin-bottom: 60px;
+        overflow: scroll;
+        padding-bottom: 20px;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+            height: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #00381f;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 8px;
+            background-color: #00b533;
+        }
+    }
+
+    &__tab {
+        display: flex;
+        align-items: center;
+        padding: 30px;
+
+        &._active {
+            background-color: #3b3f51;
+        }
+
+        @media (min-width: em($mPoint-4, 16)) {
+            cursor: pointer;
+            &:hover {
+                background-color: #3b3f51;
+            }
+        }
+    }
+
+    &__tab-name {
+        margin: 0 50px 0 20px;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &__tab-number {
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    &__tablet {
+        display: none;
+
+        &._active {
+            display: flex;
+        }
+    }
+
+    &__applications {
+        &-card {
+            display: grid;
+            grid-template-columns: 50% 30% 20%;
+            align-items: center;
+            padding: 15px 20px;
+
+            & a {
+                text-align: center;
+            }
+
+            & form {
+                text-align: right;
+                padding: 0 10px 0 0;
+            }
+        }
+
+        @media (max-width: em($mPoint-6, 16)) {
+            flex-wrap: wrap;
+
+            &__name {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    &__students {
+        &-card {
+            padding: 15px 20px;
+
+            &__top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            &__remove {
+                cursor: pointer;
+            }
+
+            &__down {
+                margin-left: 30px;
+                margin-bottom: 5px;
+                rotate: 180deg;
+                cursor: pointer;
+            }
+
+            &__btns {
+                display: flex;
+                align-items: center;
+            }
+
+            &__bottom {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+                margin-top: 30px;
+                height: 0;
+                opacity: 0;
+                display: none;
+            }
+
+            &__cours {
+                font-size: 18px;
+                font-family: "Unbounded";
+                font-weight: 700;
+                border-radius: 5px;
+                background-color: #34394d;
+            }
+        }
+    }
+
+    &__teacher {
+        &-card {
+            padding: 15px 20px;
+            &__top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            &__btns {
+                display: flex;
+                align-items: center;
+            }
+            &__remove {
+                cursor: pointer;
+            }
+            &__down {
+                margin-left: 30px;
+                margin-bottom: 5px;
+                rotate: 180deg;
+                cursor: pointer;
+            }
+            &__bottom {
+                margin-top: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                height: 0;
+                opacity: 0;
+                display: none;
+            }
+            &__cours {
+                display: flex;
+                align-items: start;
+                height: min-content;
+                gap: 20px;
+
+                padding: 10px;
+                font-size: 18px;
+                font-family: "Unbounded";
+                font-weight: 700;
+                border-radius: 5px;
+                background-color: #34394d;
+            }
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__tabs {
+            gap: 20px;
+            padding-bottom: 10px;
+        }
+
+        &__tab {
+            padding: 20px 15px;
+        }
+
+        &__tab-name {
+            margin: 0 30px 0 10px;
+            font-size: 20px;
+        }
+        &__tab-number {
+            font-size: 30px;
+        }
+
+        &__teacher {
+            &-card__cours {
+                font-size: 14px;
+
+                & svg {
+                    width: 24px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &__students {
+            &-card {
+                &__name {
+                    width: 100%;
+                }
+            }
+        }
+
+        &__teacher {
+            &-card {
+                &__name {
+                    width: 100%;
+                }
+
+                &__cours {
+                    font-size: 14px;
+
+                    & svg {
+                        width: 20px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.select__option {
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+// windows group
+.group {
+    &-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+
+        &__left {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &-card {
+            &__name {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// windows groupInfo
+.groupInfo {
+    & h5 {
+        margin: 60px 0 30px 0;
+    }
+
+    &-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 15px 20px;
+
+        &__progress {
+            &-spans {
+                display: flex;
+                gap: 10px;
+
+                & span {
+                    display: block;
+                    width: 40px;
+                    height: 10px;
+                    border-radius: 3px;
+                    background-color: white;
+
+                    &._active {
+                        background-color: #00b533;
+                    }
+                }
+            }
+
+            &-word {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: em($mPoint-6, 16)) {
+        &-card {
+            &__name {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// windows studentscours
+.studentscours {
+    &-card {
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        & button {
+            border-radius: 20px;
+            padding: 2px 10px;
+        }
+    }
+}
+
+// windows addcours
+.addcours {
+    &-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    &-card {
+        padding: 30px;
+
+        &__face {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 30px;
+
+            &-inps {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
+
+                & textarea {
+                    font-family: "OpenSans";
+                    height: 150px;
+                }
+            }
+
+            &-inp {
+                font-family: "Unbounded";
+                font-weight: 700;
+                font-size: 18px;
+                width: 100%;
+
+                border: 1px solid white;
+                padding: 1.11em;
+                border-radius: 5px;
+            }
+
+            @media (max-width: em($mPoint-2, 16)) {
+                flex-direction: column;
+            }
+        }
+
+        &__img {
+            width: min-content;
+            font-size: 40px;
+
+            & label {
+                display: block;
+                width: em(300, 40);
+                height: em(300, 40);
+
+                max-width: 300px;
+                max-height: 300px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                border: 1px solid white;
+                border-radius: 5px;
+
+                font-family: "OpenSans";
+                font-weight: 700;
+                cursor: pointer;
+
+                & img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        &__slogan {
+            font-family: "Unbounded";
+            font-weight: 700;
+            font-size: 18px;
+            height: 100px;
+            width: 100%;
+        }
+
+        &__discription {
+            font-family: "OpenSans";
+            font-size: 18px;
+            width: 100%;
+            height: 200px;
+        }
+
+        &__income {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+
+            &-name {
+                font-family: "Unbounded";
+                font-weight: 700;
+                font-size: 28px;
+                color: #00b533;
+                width: fit-content;
+                text-wrap: nowrap;
+            }
+
+            &-inp {
+                font-family: "OpenSans";
+                font-size: 24px;
+                border-bottom: 1px solid white;
+                padding-bottom: 10px;
+                max-width: 300px;
+                width: 100%;
+            }
+        }
+    }
+
+    &-technologies {
+        &__cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            column-gap: 20px;
+            row-gap: 70px;
+            margin-bottom: 80px;
+        }
+
+        &__card {
+            padding: em(30, 18);
+            position: relative;
+            font-size: 18px;
+
+            &._add-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @media (min-width: em($mPoint-4, 16)) {
+                    coursor: pointer;
+                    &:hover {
+                        background-color: #3b3f51;
+                    }
+                }
+            }
+        }
+
+        &__name {
+            font-family: "Unbounded";
+            font-weight: 700;
+            font-size: 1em;
+            padding-bottom: 10px;
+            border-bottom: 1px solid white;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        &__discription {
+            height: 100px;
+            font-family: "OpenSans";
+            font-size: 1em;
+            width: 100%;
+        }
+
+        &__btns {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+        }
+        &__btn rect {
+            @media (min-width: em($mPoint-4, 16)) {
+                coursor: pointer;
+                &:hover {
+                    fill: #3b3f51;
+                }
+            }
+        }
+    }
+
+    &-telegram {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+
+        & h3 {
+            margin: 0;
+        }
+
+        &__inp {
+            padding: 15px 30px;
+            font-family: "Unbounded";
+            font-weight: 700;
+            font-size: 18px;
+            width: 250px;
+        }
+    }
+
+    &-btn {
+        width: 100%;
+        padding: 15px;
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
+    @media (max-width: em($mPoint-4, 16)) {
+        &-card {
+            padding: 20px;
+
+            &__img {
+                font-size: 20px;
+            }
+
+            &__income {
+                padding: 20px;
+                &-name {
+                    font-size: 20px;
+                }
+                &-inp {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        &-technologies {
+            &__card {
+                font-size: 16px;
+            }
+        }
+
+        &-telegram {
+            &__inp {
+                padding: 15px 15px;
+            }
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &-telegram {
+            flex-direction: column;
+            align-items: start;
+            &__inp {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// windows buy
+.buy {
+    &__cards {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    &__card {
+        padding: 30px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__btns {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__btn {
+        text-align: center;
+        padding: 10px;
+    }
+
+    &__pay {
+        max-width: 400px;
+        width: 100%;
+        &-cards {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        &-card img {
+            width: 100%;
+        }
+    }
+
+    &__inpBlock {
+        & p {
+            margin-bottom: 10px;
+        }
+
+        & input {
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 7px;
+            border: 1px solid rgba(255, 255, 255, 0.226);
+        }
+
+        & input[type="number"]::-webkit-inner-spin-button,
+        & input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    &__inpBlocks {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        width: 100%;
+        &-top {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            & img {
+                max-width: 160px;
+            }
+        }
+        &-word {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+        &-text {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid white;
+            padding-bottom: 15px;
+
+            & p:last-child {
+                text-align: right;
+            }
+
+            &._down {
+                margin-top: 20px;
+                color: #00b533;
+                border-bottom: 1px solid #00b533;
+            }
+        }
+    }
+
+    @media (max-width: em($mPoint-5, 16)) {
+        &__card {
+            padding: 20px;
+        }
+        &__info {
+            &-top {
+                flex-direction: column;
+            }
+
+            &-text {
+                &._down {
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &__inpBlock {
+            & input {
+                padding: 10px 10px;
+            }
+        }
+    }
+}
